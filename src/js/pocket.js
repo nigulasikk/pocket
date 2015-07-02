@@ -105,6 +105,37 @@ var remainList = (function() {
     //存入 
 })();
 
+var items = (function() {
+    var itemList = [];
+    var itemOperate = {};
+
+    itemOperate.get = function() {
+        itemList = (JSON.parse(localStorage.getItem("items"))) || [];
+        return itemList;
+    };
+
+    itemOperate.add = function(itemName) {
+        itemList = (JSON.parse(localStorage.getItem("items"))) || [];
+        itemList.push(itemName);
+        this.save();
+    };
+    itemOperate.del = function(index) {
+        this.get();
+        itemList.splice(index, 1);
+        this.save();
+    };
+    itemOperate.clear = function(i, itemName) {
+        localStorage.items = [];
+    };
+    itemOperate.save = function(i, itemName) {
+        localStorage.items = JSON.stringify(itemList);
+
+    };
+
+
+    return itemOperate;
+
+}());
 // 渲染ui
 var tmpl = {
     /**
@@ -122,15 +153,18 @@ var tmpl = {
  */
 function testData() {
     remainList.clear();
-  
+
 
 }
-function testGet(){
-        console.log(remainList.get());
+
+function testGet() {
+    console.log(remainList.get());
 }
-function testDelete(){
+
+function testDelete() {
     remainList.del(1);
 }
+
 function testAdd1() {
     remainList.add([{
         name: 'gf',
