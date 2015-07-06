@@ -114,9 +114,9 @@ var items = (function() {
         return itemList;
     };
 
-    itemOperate.add = function(itemName) {
+    itemOperate.add = function(itemName,zhengfu) {
         itemList = (JSON.parse(localStorage.getItem("items"))) || [];
-        itemList.push(itemName);
+        itemList.push({"name":itemName,"zhengfu":zhengfu});
         this.save();
     };
     itemOperate.del = function(index) {
@@ -124,10 +124,10 @@ var items = (function() {
         itemList.splice(index, 1);
         this.save();
     };
-    itemOperate.clear = function(i, itemName) {
-        localStorage.items = [];
+    itemOperate.clear = function() {
+        localStorage.items = '[]';
     };
-    itemOperate.save = function(i, itemName) {
+    itemOperate.save = function() {
         localStorage.items = JSON.stringify(itemList);
 
     };

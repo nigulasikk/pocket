@@ -1,0 +1,13 @@
+    	<table class="table table-striped">
+    		<tr>
+    			<th>day</th>
+    			<th>left</th>
+    			<th>opt</th>
+    		</tr>
+    		<tr ng-repeat="remain in remains">
+    			<td>{{remain.day}}</td>
+    			<td>{{remain.sumMoney}}</td>
+    			<td ng-click="del('1')">{{remain.index}}</td>
+    		</tr>
+    	</table>
+       

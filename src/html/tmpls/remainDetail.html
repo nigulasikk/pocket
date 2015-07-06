@@ -1,0 +1,18 @@
+        <p style="text-align:right;">记录时间：<span ng-bind="datetime"></span></p>
+    	
+        <table class="table table-striped">
+    		<tr>
+    			<th>name</th>
+    			<th>zhengfu</th>
+                <th>num</th>
+    			<th>about</th>
+    		</tr>
+    		<tr ng-repeat="detail in remainsDetail.remaining">
+                <td>{{detail.name}}</td>
+                <td>{{detail.zhengfu}}</td>
+                <td>{{detail.num}}</td>
+    			<td>{{detail.about}}</td>
+    		</tr>
+    	</table>
+
+
