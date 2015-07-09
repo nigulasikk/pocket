@@ -1,0 +1,24 @@
+<div style="height:50px;vertical-align:middle;line-height:50px;">
+    <a href="pocket.html#/list">
+        <button class="btn btn-default">返回</button>
+    </a>
+
+</div>
+
+<table class="table table-striped">
+    <tr>
+        <th>name</th>
+        <th>zhengfu</th>
+        <th>num</th>
+        <th>about</th>
+    </tr>
+    <tr ng-repeat="addItem in addDetails">
+        <td>{{addItem.name}}</td>
+        <td>{{addItem.zhengfu}}</td>
+        <td><input type="text" style="width:30px;" ng-model="addItem.num" ></td>
+        <td><input type="text"style="width:30px;" ng-model="addItem.about" ></td>
+    </tr>
+</table>
+<div style="height:50px;vertical-align:middle;line-height:50px;">
+        <button class="btn btn-success" ng-click="addRemain()">增加</button>
+</div>

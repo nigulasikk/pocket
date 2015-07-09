@@ -116,9 +116,12 @@ var items = (function() {
 
     itemOperate.add = function(itemName,zhengfu) {
         itemList = (JSON.parse(localStorage.getItem("items"))) || [];
-        itemList.push({"name":itemName,"zhengfu":zhengfu});
+        itemList.push({"name":itemName,"zhengfu":zhengfu,"num":0,"about":""});
         this.save();
     };
+    
+   
+
     itemOperate.del = function(index) {
         this.get();
         itemList.splice(index, 1);

@@ -11,13 +11,13 @@ angularApp.config(['$routeProvider', function($routeProvider) {
         // template: '<h2>We are home</h2>',
         controller: 'RemainListControler'
     }).
-    when('/remainDetail/:rid', {
+    when('/detail/:rid', {
         templateUrl: 'tmpls/remainDetail.html',
         controller: 'RemainDetailControler'
     }).
      when('/addRemain', {
         templateUrl: 'tmpls/addRemain.html',
-        controller: 'RemainDetailControler'
+        controller: 'AddRemainControler'
     }).
     otherwise({
         redirectTo: '/list'

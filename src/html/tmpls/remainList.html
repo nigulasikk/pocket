@@ -1,13 +1,20 @@
-    	<table class="table table-striped">
-    		<tr>
-    			<th>day</th>
-    			<th>left</th>
-    			<th>opt</th>
-    		</tr>
-    		<tr ng-repeat="remain in remains">
-    			<td>{{remain.day}}</td>
-    			<td>{{remain.sumMoney}}</td>
-    			<td ng-click="del('1')">{{remain.index}}</td>
-    		</tr>
-    	</table>
-       
+<div style="height:50px;vertical-align:middle;line-height:50px;">
+    <a href="pocket.html#/addRemain">
+        <button class="btn btn-default">增加</button>
+    </a>
+</div>
+<table class="table table-striped">
+    <tr>
+        <th>day</th>
+        <th>left</th>
+        <th>opt</th>
+    </tr>
+    <tr ng-repeat="remain in remains">
+        <td>{{remain.day}}</td>
+        <td>{{remain.sumMoney}}</td>
+        <td>
+            <button class="btn btn-success" ng-click="showDetail(remain.index)">详情</button>
+            <button class="btn btn-danger" ng-click="del(remain.index)">删除</button>
+        </td>
+    </tr>
+</table>
