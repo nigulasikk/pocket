@@ -1,0 +1,30 @@
+<div style="height:50px;vertical-align:middle;line-height:50px;">
+    <a href="pocket.html#/list">
+        <button class="btn btn-default">返回</button>
+    </a>
+</div>
+<table class="table table-striped">
+    <tr>
+        <th>name</th>
+        <th>zhengfu</th>
+        <th>操作</th>
+    </tr>
+    <tr ng-repeat="item in itemList">
+        <td>{{item.name}}</td>
+        <td>{{item.zhengfu}}</td>
+        <td>
+            <button class="btn btn-danger" ng-click="del(item.index)">删除</button>
+        </td>
+    </tr>
+</table>
+<div class="input-group input-group-xs">
+    <span class="input-group-addon">name</span>
+    <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon3" ng-model="addname">
+</div>
+<div class="input-group input-group-xs" style="margin-top:30px;">
+    <span class="input-group-addon">zhengfu</span>
+    <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon3" ng-model="addzhengfu">
+</div>
+<div style="height:50px;vertical-align:middle;line-height:50px;margin-top:10px;">
+    <button class="btn btn-success" ng-click="addItem(addname,addzhengfu)">增加</button>
+</div>

@@ -32,7 +32,7 @@ gulp.task('live', function() {
 
 
 gulp.task('htmlMin', function() {
-    return gulp.src(['src/*.html'], {
+    return gulp.src(['src/html/**/*.html'], {
             base: 'src'
         })
         .pipe(htmlmin({
@@ -43,7 +43,7 @@ gulp.task('htmlMin', function() {
 
 
 gulp.task('imageMin', function() {
-    return gulp.src(['src/img/**/*', 'webapp/wxshu/img/**/*'], {
+    return gulp.src(['src/img/**/*'], {
             base: 'src'
         })
         .pipe(cache(imagemin({
